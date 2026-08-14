@@ -6,9 +6,9 @@ class Mex < Formula
   # The url, version and sha256 are rewritten by scripts/release.sh in the mex
   # repository, which is what keeps a published checksum from ever describing a
   # different tarball than the URL beside it.
-  url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.2/mex-0.1.2-darwin-arm64.tar.gz"
-  sha256 "897d609328b72b81d5b311f70fc55562059e0e0d8a9702d6c7546054efa1ab2b"
-  version "0.1.2"
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.3/mex-0.1.3-darwin-arm64.tar.gz"
+  sha256 "3dc5454e3f4dd9f379303b90cc7208bdbcf72b2aa44aa5f601e987bc30d93be9"
+  version "0.1.3"
   # No license line: one has not been chosen yet (PLAN.md section 13), and a
   # formula asserting one would be a claim the repository does not make.
 

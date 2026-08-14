@@ -3,9 +3,9 @@ class MexPackVision < Formula
   homepage "https://github.com/taivop/mex/tree/main/packs/vision"
 
   # Prebuilt, so installing needs no Swift toolchain. See Formula/mex.rb.
-  url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.2/mex-pack-vision-0.1.2-darwin-arm64.tar.gz"
-  sha256 "cf52bdcffcd1b0447cc8ea11954a1df43439b486ff7dc9cbc22484dcefaaaec1"
-  version "0.1.2"
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.3/mex-pack-vision-0.1.3-darwin-arm64.tar.gz"
+  sha256 "e50b279204dbf95fc95cccb4a414fcbeb25a16d997613ba526faa693625d7aee"
+  version "0.1.3"
 
   depends_on arch: :arm64
   # macOS 15 is the floor for the Vision APIs this pack uses, and it is compiled
