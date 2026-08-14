@@ -2,23 +2,13 @@ class Mex < Formula
   desc "Composable media primitives for coding agents"
   homepage "https://github.com/taivop/mex"
 
-  # A prebuilt binary, so installing needs no Go toolchain.
-  #
-  # The artifacts live in a separate private repository rather than in GitHub
-  # Release assets because Homebrew 6 has no download strategy for private
-  # release assets — GitHubPrivateRepositoryReleaseDownloadStrategy and its
-  # sibling were removed. What remains would need every user to set
-  # HOMEBREW_GITHUB_API_TOKEN, and the formula to carry a numeric asset id that
-  # changes every release. A git URL costs neither: Homebrew clones it with the
-  # same SSH access that installing this tap already requires.
-  #
-  # revision: is pinned alongside tag: so a published version cannot change under
-  # a machine that already has it.
-  url "git@github.com:taivop/mex-dist.git",
-      using:    :git,
-      tag:      "v0.1.1",
-      revision: "7b65308ac9d1bb233b49c6ee011689009165c63c"
-  version "0.1.1"
+  # A prebuilt binary: installing needs no Go toolchain, and no GitHub account.
+  # The url, version and sha256 are rewritten by scripts/release.sh in the mex
+  # repository, which is what keeps a published checksum from ever describing a
+  # different tarball than the URL beside it.
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.2/mex-0.1.2-darwin-arm64.tar.gz"
+  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "0.1.2"
   # No license line: one has not been chosen yet (PLAN.md section 13), and a
   # formula asserting one would be a claim the repository does not make.
 
@@ -39,24 +29,21 @@ class Mex < Formula
   depends_on "ffmpeg-full"
 
   def install
-    bin.install "darwin-arm64/mex"
+    bin.install "mex"
   end
 
   def caveats
     <<~EOS
-      The agent instruction files ship inside the binary. Install them with:
+      Finish the installation with:
 
-        mex skills install
+        mex setup
 
-      That writes them to ~/.claude/skills/. Re-run with --overwrite after
-      upgrading mex, so the guidance never describes an older command surface
-      than the CLI beside it.
+      That writes the agent instruction files into ~/.claude/skills/ and reports
+      what this machine can do. Re-run it after every upgrade: the guidance
+      describes a command surface, so a copy from an older mex describes an
+      older one.
 
-      Then confirm this machine can do the work:
-
-        mex doctor
-
-      For background blur and person masks, add the capability pack:
+      For background blur and person masks:
 
         brew install taivop/mex/mex-pack-vision
     EOS
@@ -73,18 +60,18 @@ class Mex < Formula
     # perfectly and fails only when something runs it.
     assert_match "arm64", shell_output("lipo -archs #{bin}/mex")
 
-    # The embedded skills have to be there, or `mex skills install` installs
-    # nothing and reports success.
+    # The skills have to be inside the binary, or `mex setup` installs nothing
+    # and reports success.
     listing = shell_output("#{bin}/mex skills install --list --target #{testpath}/skills")
     assert_match "mex-media-production", listing
     refute_predicate testpath/"skills", :exist?, "--list must not write anything"
 
-    system bin/"mex", "skills", "install", "--target", testpath/"skills"
+    # setup is the command the caveat tells people to run, so it is the one worth
+    # proving works. It installs the skills and interrogates FFmpeg — including
+    # the keg-only ffmpeg-full this formula depends on, which is deliberately off
+    # PATH, so this is also the assertion that mex's own keg search works on a
+    # machine nobody configured by hand.
+    system bin/"mex", "setup", "--skills-target", testpath/"skills"
     assert_predicate testpath/"skills/mex-media-production/SKILL.md", :exist?
-
-    # doctor reaches the FFmpeg this formula depends on. That dependency is
-    # keg-only and deliberately off PATH, so this is the assertion that mex's own
-    # keg search works on a machine nobody configured by hand.
-    system bin/"mex", "doctor"
   end
 end
