@@ -4,7 +4,7 @@ class MexPackVision < Formula
 
   # Prebuilt, so installing needs no Swift toolchain. See Formula/mex.rb.
   url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.2/mex-pack-vision-0.1.2-darwin-arm64.tar.gz"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "cf52bdcffcd1b0447cc8ea11954a1df43439b486ff7dc9cbc22484dcefaaaec1"
   version "0.1.2"
 
   depends_on arch: :arm64

@@ -7,7 +7,7 @@ class Mex < Formula
   # repository, which is what keeps a published checksum from ever describing a
   # different tarball than the URL beside it.
   url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.2/mex-0.1.2-darwin-arm64.tar.gz"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "897d609328b72b81d5b311f70fc55562059e0e0d8a9702d6c7546054efa1ab2b"
   version "0.1.2"
   # No license line: one has not been chosen yet (PLAN.md section 13), and a
   # formula asserting one would be a claim the repository does not make.
