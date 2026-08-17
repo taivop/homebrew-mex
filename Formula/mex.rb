@@ -66,16 +66,21 @@ class Mex < Formula
 
     # The skills have to be inside the binary, or `mex setup` installs nothing
     # and reports success.
-    listing = shell_output("#{bin}/mex skills install --list --target #{testpath}/skills")
+    listing = shell_output("#{bin}/mex skills list")
     assert_match "mex-media-production", listing
-    refute_path_exists testpath/"skills", "--list must not write anything"
+    refute_path_exists testpath/".agents", "skills list must not write anything"
+
+    system bin/"mex", "skills", "install", "media-production",
+           "--agent", "codex", "--scope", "project", "--root", testpath
+    assert_path_exists testpath/".agents/skills/mex-media-production/SKILL.md"
 
     # setup is the command the caveat tells people to run, so it is the one worth
-    # proving works. It installs the skills and interrogates FFmpeg — including
+    # proving works. It refreshes managed skills and interrogates FFmpeg — including
     # the keg-only ffmpeg-full this formula depends on, which is deliberately off
     # PATH, so this is also the assertion that mex's own keg search works on a
     # machine nobody configured by hand.
-    system bin/"mex", "setup", "--skills-target", testpath/"skills"
-    assert_path_exists testpath/"skills/mex-media-production/SKILL.md"
+    system bin/"mex", "setup"
+    docs = Pathname(shell_output("#{bin}/mex docs path").strip)
+    assert_path_exists docs/"INDEX.md"
   end
 end
