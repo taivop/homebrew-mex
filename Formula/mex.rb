@@ -7,8 +7,8 @@ class Mex < Formula
   # repository, which is what keeps a published checksum from ever describing a
   # different tarball than the URL beside it.
   url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.6/mex-0.1.6-darwin-arm64.tar.gz"
-  sha256 "08d234f63cb75f890619cbabc7b8507793420e301866babcbb72cff2d65ac81a"
   version "0.1.6"
+  sha256 "08d234f63cb75f890619cbabc7b8507793420e301866babcbb72cff2d65ac81a"
   # No license line: one has not been chosen yet (PLAN.md section 13), and a
   # formula asserting one would be a claim the repository does not make.
 
@@ -16,7 +16,6 @@ class Mex < Formula
   # for. Stated rather than discovered, so somebody on an Intel Mac is told why
   # instead of installing something that cannot run.
   depends_on arch: :arm64
-  depends_on :macos
 
   # ffmpeg-full rather than ffmpeg: homebrew/core's ffmpeg formula has no libass,
   # so it cannot render captions, cards or overlays — while reporting an entirely
@@ -27,6 +26,7 @@ class Mex < Formula
   # directories itself, so nothing here forces a link — forcing one would break
   # the next `brew install ffmpeg`.
   depends_on "ffmpeg-full"
+  depends_on :macos
 
   def install
     bin.install "mex"
@@ -46,6 +46,10 @@ class Mex < Formula
       For background blur and person masks:
 
         brew install taivop/mex/mex-pack-vision
+
+      For fully local Apple Speech and Argmax transcription:
+
+        brew install taivop/mex/mex-pack-speech
     EOS
   end
 
@@ -64,7 +68,7 @@ class Mex < Formula
     # and reports success.
     listing = shell_output("#{bin}/mex skills install --list --target #{testpath}/skills")
     assert_match "mex-media-production", listing
-    refute_predicate testpath/"skills", :exist?, "--list must not write anything"
+    refute_path_exists testpath/"skills", "--list must not write anything"
 
     # setup is the command the caveat tells people to run, so it is the one worth
     # proving works. It installs the skills and interrogates FFmpeg — including
@@ -72,6 +76,6 @@ class Mex < Formula
     # PATH, so this is also the assertion that mex's own keg search works on a
     # machine nobody configured by hand.
     system bin/"mex", "setup", "--skills-target", testpath/"skills"
-    assert_predicate testpath/"skills/mex-media-production/SKILL.md", :exist?
+    assert_path_exists testpath/"skills/mex-media-production/SKILL.md"
   end
 end
