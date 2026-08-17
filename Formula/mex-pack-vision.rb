@@ -1,11 +1,10 @@
 class MexPackVision < Formula
   desc "Person-segmentation capability pack for mex, over Apple's Vision framework"
-  homepage "https://github.com/taivop/mex/tree/main/packs/vision"
+  homepage "https://github.com/taivop/homebrew-mex"
 
   # Prebuilt, so installing needs no Swift toolchain. See Formula/mex.rb.
   url "https://github.com/taivop/homebrew-mex/releases/download/v0.1.7/mex-pack-vision-0.1.7-darwin-arm64.tar.gz"
   sha256 "afafb415ceea2011b440769b79acd246ce35a6b1246e04afacd567c0b9910178"
-  version "0.1.7"
 
   depends_on arch: :arm64
   # macOS 15 is the floor for the Vision APIs this pack uses, and it is compiled
