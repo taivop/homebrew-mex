@@ -16,10 +16,29 @@ mex setup
 `mex setup` installs the agent instruction files and reports what this machine
 can do. Re-run it after every upgrade.
 
-For background blur and person masks, add the capability pack:
+Capability packs are optional add-ons to the main `mex` CLI. Each is a separate
+Homebrew formula that depends on `mex`, so installing a pack on a clean machine
+also installs the core CLI.
+
+For fully local transcription, install the speech pack:
+
+```sh
+brew install taivop/mex/mex-pack-speech
+mex pack doctor
+```
+
+The core CLI contains the transcription workflow, while `mex-pack-speech`
+supplies the recognition engines. One pack provides both Apple SpeechAnalyzer
+and Argmax OSS; automatic selection chooses between them based on the machine,
+language and requested features. It includes the pinned recognition, tokenizer
+and speaker-diarization assets, so there is no first-run model download and no
+recording or transcript is sent to a recognition service.
+
+For background blur and person masks, install the vision pack:
 
 ```sh
 brew install taivop/mex/mex-pack-vision
+mex pack doctor
 ```
 
 ## Requirements and compatibility
@@ -28,7 +47,10 @@ A Mac with Apple Silicon, and Homebrew. Everything is a prebuilt binary, so
 nothing is compiled and no toolchain is needed. FFmpeg is installed as a
 dependency.
 
-The capability pack additionally needs macOS 15 or newer.
+The speech pack supports macOS 14 or newer. Argmax provides transcription on
+all supported versions; Apple SpeechAnalyzer is additionally available on
+macOS 26 or newer for its supported locales. The vision pack needs macOS 15 or
+newer.
 
 MEX supports the current and previous FFmpeg major lines: **9.x and 8.x**. The
 exact regression-tested releases are 9.0.1 and 8.1.2. The formula installs the
