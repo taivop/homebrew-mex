@@ -13,8 +13,10 @@ brew tap taivop/mex && brew trust taivop/mex && brew install taivop/mex/mex
 mex setup
 ```
 
-`mex setup` installs the agent instruction files and reports what this machine
-can do. Re-run it after every upgrade.
+`mex setup` installs version-matched documentation, checks what this machine can
+do, and offers one optional mex skill for Claude Code and Codex. It never installs
+a new skill without confirmation. Re-run setup after every upgrade to refresh
+documentation and any mex-managed personal skill.
 
 Capability packs are optional add-ons to the main `mex` CLI. Each is a separate
 Homebrew formula that depends on `mex`, so installing a pack on a clean machine

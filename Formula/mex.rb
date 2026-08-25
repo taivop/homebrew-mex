@@ -37,10 +37,10 @@ class Mex < Formula
 
         mex setup
 
-      That writes the agent instruction files into ~/.claude/skills/ and reports
-      what this machine can do. Re-run it after every upgrade: the guidance
-      describes a command surface, so a copy from an older mex describes an
-      older one.
+      That installs version-matched documentation, reports what this machine can
+      do, and offers one optional mex skill for Claude Code and Codex. It never
+      installs a new skill without confirmation. Re-run setup after every
+      upgrade to refresh documentation and any mex-managed personal skill.
 
       For background blur and person masks:
 
@@ -63,15 +63,15 @@ class Mex < Formula
     # perfectly and fails only when something runs it.
     assert_match "arm64", shell_output("lipo -archs #{bin}/mex")
 
-    # The skills have to be inside the binary, or `mex setup` installs nothing
-    # and reports success.
+    # The one optional skill has to be inside the binary, and listing it must
+    # remain read-only.
     listing = shell_output("#{bin}/mex skills list")
-    assert_match "mex-media-production", listing
+    assert_match(/^mex\s+mex\s+Use mex /, listing)
     refute_path_exists testpath/".agents", "skills list must not write anything"
 
-    system bin/"mex", "skills", "install", "media-production",
+    system bin/"mex", "skills", "install", "mex",
            "--agent", "codex", "--scope", "project", "--root", testpath
-    assert_path_exists testpath/".agents/skills/mex-media-production/SKILL.md"
+    assert_path_exists testpath/".agents/skills/mex/SKILL.md"
 
     # setup is the command the caveat tells people to run, so it is the one worth
     # proving works. It refreshes managed skills and interrogates FFmpeg — including
