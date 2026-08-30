@@ -1,0 +1,140 @@
+MEX SOFTWARE LICENSE 1.0
+
+Copyright (c) 2026 Taivo Pungas. All rights reserved.
+
+MEX is free to use, including for commercial work, under the terms below. This
+is a license to use MEX, not a sale of MEX. By installing, copying, or using MEX,
+you accept these terms. If you do not accept them, do not use MEX.
+
+1. Who and what this license covers
+
+The "Licensor" is Taivo Pungas.
+
+The "Software" is MEX, its capability packs, and its documentation when they
+are provided with this license. Software components and other materials
+identified in third-party notices are "Third-Party Materials" and remain under
+their own licenses.
+
+"You" means either an individual using the Software or an organization on whose
+behalf the Software is used. An organization may allow its employees and
+contractors to use the Software solely on its behalf and is responsible for
+their compliance with this license.
+
+2. What you may do
+
+The Licensor gives you a non-exclusive, worldwide license, free of charge, to:
+
+- install and use the Software for personal or commercial purposes;
+- make internal copies, backups, and deployment packages;
+- allow your employees and contractors to use it on your behalf;
+- run it through your internal scripts, agents, APIs, continuous-integration
+  systems, shared machines, and private infrastructure; and
+- use it to provide creative, media-production, consulting, or other services
+  to clients.
+
+Clients may give you inputs, briefs, and feedback and may receive finished work
+from you. They may not directly operate or automatically invoke the Software
+under your license.
+
+Your right to use each version you lawfully obtain is perpetual unless this
+license is terminated under Section 7. It does not include a right to future
+versions, updates, support, or maintenance. A later license does not change the
+terms for an earlier version.
+
+3. Your materials and creations
+
+Your inputs, prompts, scripts, configurations, presets, workflows, and other
+materials remain yours.
+
+As between you and the Licensor, you own all rights, if any, in the media,
+documents, data, project files, and other results produced with the Software
+("Outputs"). The Licensor claims no ownership in Outputs and, to the extent
+permitted by law, assigns to you any rights the Licensor may acquire in them.
+
+You may use, change, reproduce, distribute, license, and sell your materials and
+Outputs for any lawful purpose, including client work, without attributing MEX.
+Files normally created by MEX commands are Outputs even when they use MEX file
+formats, schemas, or boilerplate. An executable or other copy of the Software is
+not an Output.
+
+You are responsible for having the rights needed for your inputs. This license
+does not give you rights in third-party material that may appear in an input or
+Output.
+
+4. Your own tools and workflows
+
+You may distribute and sell your own scripts, plugins, presets, prompts,
+configurations, and workflows that work with MEX, provided they do not include
+or distribute the Software.
+
+The individual or organization that operates MEX must have its own valid MEX
+license. You are not responsible for monitoring or enforcing another person's
+compliance. You may truthfully describe your work as "for MEX," "compatible
+with MEX," or similar, but may not imply that it is official or endorsed by the
+Licensor.
+
+5. What you may not do
+
+Unless the Licensor gives you written permission, you may not:
+
+- sell, resell, sublicense, rent, lease, lend, publish, distribute, or otherwise
+  provide a copy of the Software outside your organization and its permitted
+  contractors;
+- bundle or embed the Software in a product or service provided to others;
+- give clients or the public direct or automated access to the Software or its
+  functionality through hosting, an API, software-as-a-service, a managed
+  software service, or a similar arrangement;
+- rebrand the Software or remove its legal notices; or
+- use the MEX name or trademarks in a way that suggests sponsorship,
+  endorsement, ownership, or official status.
+
+You may share links to copies distributed by the Licensor or an authorized
+distributor, including the official MEX Homebrew tap. These restrictions do not
+limit rights that applicable law does not allow the Licensor to restrict.
+
+6. Ownership and third-party materials
+
+The Licensor keeps all rights in the Software that this license does not
+expressly grant.
+
+Third-Party Materials are governed by the licenses and notices supplied with
+them. This license does not reduce any rights granted directly by those terms.
+
+7. Termination
+
+Conduct prohibited by Section 5 is outside this license. If you otherwise
+materially breach these terms and do not cure the breach within 30 days after
+receiving written notice, this license terminates.
+
+After termination, you must stop using the Software and reasonably delete active
+copies under your control. Inaccessible backups, automatic caches, and legally
+required archives may remain until removed through your normal retention
+process, but may not be restored or used. Downloading or reinstalling the
+Software does not restore a terminated license.
+
+Termination does not affect your ownership or permitted use of materials or
+Outputs created before termination.
+
+8. No warranty and no liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SOFTWARE IS PROVIDED "AS IS" AND
+"AS AVAILABLE," WITHOUT ANY WARRANTY OR CONDITION OF ANY KIND, EXPRESS,
+IMPLIED, OR STATUTORY, INCLUDING WARRANTIES OF TITLE, NON-INFRINGEMENT,
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR THAT THE SOFTWARE WILL BE
+SECURE, ACCURATE, ERROR-FREE, OR AVAILABLE.
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR WILL NOT BE LIABLE TO YOU OR
+ANYONE ELSE FOR ANY CLAIM, LIABILITY, LOSS, DAMAGE, COST, OR EXPENSE OF ANY KIND
+ARISING FROM OR RELATED TO THE SOFTWARE OR ITS USE, UNDER ANY LEGAL THEORY, EVEN
+IF THE LICENSOR HAS BEEN ADVISED THAT SUCH HARM IS POSSIBLE.
+
+Nothing in this section excludes liability that applicable law does not permit
+to be excluded.
+
+9. Separate agreements
+
+An individual or organization that needs additional distribution or hosting
+rights, warranties, indemnities, support commitments, security or data terms, or
+other negotiated terms may request a separate written agreement from the
+Licensor at taivo@pungas.ee. If that agreement conflicts with this license, the
+separate agreement controls.

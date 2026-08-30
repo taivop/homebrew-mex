@@ -3,8 +3,8 @@ class MexPackVision < Formula
   homepage "https://github.com/taivop/homebrew-mex"
 
   # Prebuilt, so installing needs no Swift toolchain. See Formula/mex.rb.
-  url "https://github.com/taivop/homebrew-mex/releases/download/v0.2.0/mex-pack-vision-0.2.0-darwin-arm64.tar.gz"
-  sha256 "422b348d7286424b251213fc4f88b2c7513be26c64b1203cb71412723bb4f899"
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.2.1/mex-pack-vision-0.2.1-darwin-arm64.tar.gz"
+  sha256 "6bc1de9bfc2bee790c8fa95dc2a408275139fd8343f4609574ef35282dc4711f"
 
   depends_on arch: :arm64
   # macOS 15 is the floor for the Vision APIs this pack uses, and it is compiled
@@ -18,6 +18,7 @@ class MexPackVision < Formula
   depends_on "taivop/mex/mex"
 
   def install
+    prefix.install "LICENSE"
     # The filename is the interface. mex discovers a pack by looking for an
     # executable named mex-pack-NAME on PATH or under MEX_PACK_PATH, so renaming
     # it here would make it invisible rather than broken — a worse failure,

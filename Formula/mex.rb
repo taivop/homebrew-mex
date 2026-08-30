@@ -6,10 +6,9 @@ class Mex < Formula
   # The url and sha256 are rewritten by scripts/release.sh in the mex
   # repository, which is what keeps a published checksum from ever describing a
   # different tarball than the URL beside it.
-  url "https://github.com/taivop/homebrew-mex/releases/download/v0.2.0/mex-0.2.0-darwin-arm64.tar.gz"
-  sha256 "211e5a2d0f15c66fdd53b292d43ca78da1b6ce1b7e32bd048cb007f23b2db429"
-  # No license line: one has not been chosen yet (PLAN.md section 13), and a
-  # formula asserting one would be a claim the repository does not make.
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.2.1/mex-0.2.1-darwin-arm64.tar.gz"
+  sha256 "43038cd4b385b2e15094285c9e60e4dd709c513da68ed2bb75b1ec88c399eded"
+  # Custom MEX license; see the LICENSE file in this tap and release archive.
 
   # Apple Silicon only, which is what mex targets and what the artifact is built
   # for. Stated rather than discovered, so somebody on an Intel Mac is told why
@@ -28,6 +27,7 @@ class Mex < Formula
   depends_on :macos
 
   def install
+    prefix.install "LICENSE"
     bin.install "mex"
   end
 
