@@ -4,8 +4,8 @@ class MexPackDepth < Formula
 
   # The archive contains the checksum-verified model, vendored model code, and
   # pinned Python wheels. Inference is offline after installation.
-  url "https://github.com/taivop/homebrew-mex/releases/download/v0.2.1/mex-pack-depth-0.2.1-darwin-arm64.tar.gz"
-  sha256 "b36a97e7dc9eb6a059e59d2a88b9b7e3b7fcdde0bbb942ecfe4a205ce57e9ffc"
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.3.0/mex-pack-depth-0.3.0-darwin-arm64.tar.gz"
+  sha256 "1af6ca1897b6d4ed147d8c0c6eee8d4d32815820cfe8145ec57500391ae2cbbf"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma

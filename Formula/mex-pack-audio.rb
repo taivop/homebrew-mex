@@ -3,8 +3,8 @@ class MexPackAudio < Formula
   homepage "https://github.com/taivop/homebrew-mex"
 
   # Prebuilt with the exact local model weights under share/mex-pack-audio.
-  url "https://github.com/taivop/homebrew-mex/releases/download/v0.2.1/mex-pack-audio-0.2.1-darwin-arm64.tar.gz"
-  sha256 "18afcdbd05ae9b0ce2731d4749d1899118cd4954d66535775d88bab70df061a6"
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.3.0/mex-pack-audio-0.3.0-darwin-arm64.tar.gz"
+  sha256 "67114715438c137c81d43a56afaafc476967c3437d1b4a69eb9e96f58977fe04"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma

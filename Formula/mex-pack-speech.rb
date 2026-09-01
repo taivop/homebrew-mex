@@ -4,8 +4,8 @@ class MexPackSpeech < Formula
 
   # Prebuilt, so installing needs no Swift toolchain. The archive also contains
   # every model asset Argmax would otherwise download on first use.
-  url "https://github.com/taivop/homebrew-mex/releases/download/v0.2.1/mex-pack-speech-0.2.1-darwin-arm64.tar.gz"
-  sha256 "4b0ce7db37cf1bf441c1406bcf119b0c903a4c121c449231082f5dacf6818559"
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.3.0/mex-pack-speech-0.3.0-darwin-arm64.tar.gz"
+  sha256 "d4117a0f92ad7aeb1eea22f4785c58a546b3c0c3fab7448742947eaa793f9b40"
 
   depends_on arch: :arm64
   depends_on macos: :sonoma
