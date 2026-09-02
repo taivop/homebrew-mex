@@ -42,9 +42,7 @@ class Mex < Formula
       installs a new skill without confirmation. Re-run setup after every
       upgrade to refresh documentation and any mex-managed personal skill.
 
-      For background blur and person masks:
-
-        brew install taivop/mex/mex-pack-vision
+      Person segmentation and tracking are built into mex on supported Macs.
 
       For fully local Apple Speech and Argmax transcription:
 
