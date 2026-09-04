@@ -6,8 +6,8 @@ class Mex < Formula
   # The url and sha256 are rewritten by scripts/release.sh in the mex
   # repository, which is what keeps a published checksum from ever describing a
   # different tarball than the URL beside it.
-  url "https://github.com/taivop/homebrew-mex/releases/download/v0.3.0/mex-0.3.0-darwin-arm64.tar.gz"
-  sha256 "e647d7998fa47efc019abcbc67a8b283dad5842e7593b90edfee95562a21b7bb"
+  url "https://github.com/taivop/homebrew-mex/releases/download/v0.4.0/mex-0.4.0-darwin-arm64.tar.gz"
+  sha256 "bca54387cdc1ca988ad335c2e63612f7dd973d233679e0e80d6e5fc351ec3241"
   # Custom MEX license; see the LICENSE file in this tap and release archive.
 
   # Apple Silicon only, which is what mex targets and what the artifact is built
